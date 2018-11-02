@@ -1,0 +1,60 @@
+Notes:
+
+Differencing: to cancel out seasonality. previous year's values are subtracted from the current years values.
+So if a time sequence starts from 1949 to 1960. Then after differencing, the dates are from 1950 to 1960.
+
+Challenges:
+Real data has delays. Difficult to validate. Many algorithms and many different treatments. Xgboost is not very good on its own
+algorithms: ARIMA, Exp Smoothing, Decompositions. A lot of bench marking is done by these algorithms. 
+ARIMA is pretty good.
+
+Time series:
+1.  Order of the data actually matters.
+2.  The training and the future data are not the same.
+
+Feature Engineering:
+1.  Automated lag selection
+2.  Automated window statistics
+3.  Rolling numeric,categorical, text information
+
+Target Transforms:
+1.  Stationarity, exponential, periodicity detection
+2.  Automated differencing,offsets,link functions,log transformations
+3.  Additive or multiplicative models
+
+Model Backtesting:
+1.  Time-aware data partitioning and validation
+2.  Automated or configurable backtesting strategies
+3.  Refit on most recent data
+
+Modeling:
+1.  ARIMA, ETS, decompositions
+2.  time-aware xgboost,distance modelling
+3.  Deploy to dedicated prediction service
+
+
+ARIMA, RNNs and ETS- They predict step by step and then use their prediction as an input for further prediction
+
+Feature Engineering:
+1. Simple Lags:
+A new feature: Appending columns with shifts. Example, adding a feature called Sales 3 days ago or Sales 7 days ago
+2. Weighted moving average. Optimize the prediction over a window. (scipy stats)
+3. Log transforms
+4. Differencing(stats model in python.) REMOVES TRENDS AND PERIODICITY
+
+Validation:
+1.  Out of time validation
+
+How much data to use?
+Time series learning curves. One way is to look at the number of recent rows.
+
+
+
+
+
+
+
+
+
+
+
